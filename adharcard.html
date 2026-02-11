@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aadhaar Card</title>
+
+<!-- QR Code Library -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+<style>
+body {
+    background: #e0e0e0;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 600px;
+    background: white;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.tricolor {
+    height: 18px;
+    background: linear-gradient(to bottom, orange 33%, white 33% 66%, green 66%);
+}
+
+.header {
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.header small {
+    display: block;
+    font-size: 13px;
+}
+
+.content {
+    display: flex;
+    padding: 15px;
+}
+
+.photo {
+    width: 120px;
+    text-align: center;
+}
+
+.photo img {
+    width: 100px;
+    height: 120px;
+    border: 1px solid #000;
+}
+
+.details {
+    width: 60%;
+    font-size: 14px;
+    line-height: 1.8;
+    padding-left: 15px;
+}
+
+.qr {
+    width: 120px;
+    text-align: center;
+}
+
+.aadhaar-no {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+}
+
+.footer {
+    border-top: 2px solid red;
+    text-align: center;
+    padding: 6px;
+    font-weight: bold;
+    color: red;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="tricolor"></div>
+
+    <div class="header">
+        भारत सरकार<br>
+        <small>GOVERNMENT OF INDIA</small>
+    </div>
+
+    <div class="content">
+
+        <div class="photo">
+            <img src="photo.jpg" alt="Photo">
+        </div>
+
+        <div class="details">
+            <div><b>Name:</b> XXXX XXXX</div>
+            <div><b>DOB:</b> XX-XX-XXXX</div>
+            <div><b>Gender:</b> MALE</div>
+        </div>
+
+        <div class="qr">
+            <div id="qrcode"></div>
+        </div>
+
+    </div>
+
+    <div class="aadhaar-no">
+        0000&nbsp;&nbsp;1111&nbsp;&nbsp;2222
+    </div>
+
+    <div class="footer">
+        आधार – आम आदमी का अधिकार
+    </div>
+
+</div>
+
+<script>
+new QRCode(document.getElementById("qrcode"), {
+    text: "Aadhaar No: 000011112222\nName: XXXX XXXX\nDOB: XX-XX-XXXX",
+    width: 100,
+    height: 100
+});
+</script>
+
+</body>
+</html>
+

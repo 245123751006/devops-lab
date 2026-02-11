@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voter Registration Form</title>
+
+    <style>
+    body {
+        background-color: lightyellow;
+    }
+
+    h1 {
+        color: green;
+        text-align: center;
+    }
+
+    h2 {
+        color: pink;
+        text-align: center;
+    }
+
+    table {
+        background-color: cyan;
+        border-collapse: collapse;
+    }
+
+    td {
+        font-size: 22px;
+        color: black;
+    }
+
+    input, select, textarea {
+        font-size: 20px;
+        color: blue;
+    }
+
+    /* Different colors for each row */
+    tr:nth-child(1) { background-color: #ffdddd; }
+    tr:nth-child(2) { background-color: #ddffdd; }
+    tr:nth-child(3) { background-color: #ddddff; }
+    tr:nth-child(4) { background-color: #fff0cc; }
+    tr:nth-child(5) { background-color: #e0ffff; }
+    tr:nth-child(6) { background-color: #f0e6ff; }
+    tr:nth-child(7) { background-color: #ffe6f2; }
+</style>
+
+</head>
+
+<body>
+
+<h1>Election Commission of India</h1>
+<h2>Voter Registration Form</h2>
+
+<form>
+    <table border="5" align="center" cellspacing="10" cellpadding="10">
+
+        <tr>
+            <td>Name</td>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <td>Age</td>
+            <td><input type="number"></td>
+        </tr>
+
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" name="g"> Male
+                <input type="radio" name="g"> Female
+                <input type="radio" name="g"> Other
+            </td>
+        </tr>
+
+        <tr>
+            <td>Address</td>
+            <td><textarea rows="4" cols="20"></textarea></td>
+        </tr>
+
+        <tr>
+            <td>District</td>
+            <td>
+                <select>
+                    <option>--SELECT--</option>
+                    <option>District 1</option>
+                    <option>District 2</option>
+                    <option>District 3</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>ID Proof</td>
+            <td>
+                <input type="checkbox"> Aadhaar
+                <input type="checkbox"> PAN
+                <input type="checkbox"> Driving License
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Register">
+                <input type="reset" value="Clear">
+            </td>
+        </tr>
+
+    </table>
+</form>
+
+</body>
+</html>

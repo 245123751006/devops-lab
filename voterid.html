@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Voter ID Card</title>
+
+<!-- Barcode Library -->
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+
+<style>
+body {
+    background: #ddd;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 520px;
+    height: 320px;
+    background: linear-gradient(135deg, #e6f2f5, #cfe8ee);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    margin: 40px auto;
+    padding: 15px;
+}
+
+.header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #004b5a;
+    border-bottom: 2px solid #004b5a;
+    padding-bottom: 5px;
+}
+
+.sub-header {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 3px;
+    color: #333;
+}
+
+.content {
+    display: flex;
+    margin-top: 15px;
+}
+
+.photo {
+    width: 110px;
+    height: 140px;
+    border: 2px solid #555;
+    margin-right: 15px;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+}
+
+.details {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.barcode {
+    width: 260px;
+}
+
+.id-no {
+    font-size: 12px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="header">ELECTION COMMISSION OF INDIA</div>
+    <div class="sub-header">IDENTITY CARD</div>
+
+    <div class="content">
+        <div class="photo">
+            <img src="photo.jpg" alt="Photo">
+        </div>
+
+        <div class="details">
+            <div><span class="label">Name:</span> AKULA VAISHNAVI</div>
+            <div><span class="label">Father's Name:</span> XXXXXXXX</div>
+            <div><span class="label">DOB:</span> 12-05-2004</div>
+            <div><span class="label">Gender:</span> Female</div>
+            <div><span class="label">Address:</span> Hyderabad, Telangana</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="id-no">EPIC No: ABC1234567</div>
+        <svg id="barcode"></svg>
+    </div>
+</div>
+
+<script>
+JsBarcode("#barcode", "ABC1234567", {
+    format: "CODE128",
+    width: 2,
+    height: 40,
+    displayValue: false
+});
+</script>
+
+</body>
+</html>
+
